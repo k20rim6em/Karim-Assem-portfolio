@@ -1,0 +1,25 @@
+---
+title: "M-PAM Digital Communication System with Matched Filter"
+publishedAt: "2026-05-01"
+summary: "Simulated and verified an optimal matched-filter receiver for M-level PAM over AWGN, in both MATLAB and Simulink."
+images: []
+tag: "Communication Systems"
+team: ["Ahmed Hany"]
+---
+
+## Overview
+
+This project (CIE 237, Probability and Stochastic Processes) explores how a communication receiver can recover digital symbols sent over a noisy channel as reliably as physically possible, using the matched filter — the theoretically optimal receiver for signals in Additive White Gaussian Noise (AWGN).
+
+## What we built
+
+- A correlator/matched-filter receiver for M-PAM (2, 4, 8, 16-PAM) implemented from scratch in MATLAB using Monte Carlo simulation
+- An independent Simulink model built from primitive blocks (flip + convolution) to verify the same receiver at the block-diagram level
+- Bit/Symbol Error Rate curves compared against the theoretical Q-function formula across a range of Eb/N0 values
+- Analysis of the SNR penalty incurred as modulation order increases
+
+## Result
+
+Both the MATLAB and Simulink implementations matched the theoretical BER/SER curves closely across all tested PAM orders, confirming the matched filter's optimality. We also quantified the real trade-off in digital communications: each doubling of the PAM order costs roughly 5 dB more SNR for the same error rate (an 18.8 dB penalty for 32-PAM vs. 2-PAM) — spectral efficiency vs. power cost.
+
+**Tools:** MATLAB, Simulink, Monte Carlo simulation, AWGN channel modeling
