@@ -1,0 +1,25 @@
+---
+title: "Multi-Band Speech Equalizer for Podcast Clarity"
+publishedAt: "2026-05-01"
+summary: "Built a MATLAB audio pipeline that denoises and equalizes voice recordings across 7 speech-optimized frequency bands."
+images: []
+tag: "Digital Signal Processing"
+team: []
+---
+
+## Overview
+
+Podcast and lecture recordings are often noisy and sound muddy or muffled. This project (CIE 247, Digital Signal Processing) builds a full MATLAB pipeline that cleans up a noisy voice recording and reshapes its frequency content for clarity, output as a ready-to-listen `.wav` file.
+
+## What I built
+
+- A spectral-subtraction noise reduction stage that estimates the room's noise profile from a silent stretch of audio and subtracts it from the signal
+- A 7-band parallel filter bank (both FIR window-based and IIR Butterworth/Chebyshev options) tuned to speech: rumble, warmth, vowel resonance, clarity, presence, sibilance, and air
+- Per-band gain control, recombined and normalized into a single equalized output
+- Zero-phase filtering throughout to avoid smearing consonants and plosives
+
+## Result
+
+Applying a "speech clarity" gain profile (cutting rumble/muddiness, boosting the 800 Hz–10 kHz presence range) suppressed the background noise floor by 20–30 dB while keeping vocal formants intact, producing a noticeably clearer, more intelligible recording.
+
+**Tools:** MATLAB, spectral subtraction, FIR/IIR filter banks
